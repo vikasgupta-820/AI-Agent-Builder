@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg-primary: #0f1117;
+  --color-bg-secondary: #1a1b23;
+  --color-bg-tertiary: #252630;
+  --color-border: #2e3040;
+  --color-border-hover: #4a4d60;
+  --color-text-primary: #e4e4e7;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+  --color-accent: #6366f1;
+  --color-accent-hover: #818cf8;
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-error: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* React Flow overrides */
+.react-flow__background {
+  background-color: var(--color-bg-primary) !important;
+}
+
+.react-flow__minimap {
+  background-color: var(--color-bg-secondary) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 8px !important;
+}
+
+.react-flow__controls {
+  border: 1px solid var(--color-border) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background-color: var(--color-bg-secondary) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  fill: var(--color-text-secondary) !important;
+}
+
+.react-flow__controls-button:hover {
+  background-color: var(--color-bg-tertiary) !important;
+  fill: var(--color-text-primary) !important;
+}
+
+.react-flow__edge-path {
+  stroke: var(--color-border-hover) !important;
+  stroke-width: 2 !important;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: var(--color-accent) !important;
+}
+
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid var(--color-border) !important;
+  background-color: var(--color-bg-tertiary) !important;
+}
+
+.react-flow__handle:hover {
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: var(--color-warning); }
+  50% { border-color: transparent; }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 1.5s ease-in-out infinite;
+}
