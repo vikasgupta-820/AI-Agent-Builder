@@ -73,7 +73,7 @@ function CanvasInner() {
           systemPrompt: template.prompt,
           model: 'gemini-2.5-flash',
           tools: [] as string[],
-          isStart: false,
+          isStart: template.role === 'planner',
           status: 'idle' as const,
         } satisfies AgentConfig,
       };
